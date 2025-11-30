@@ -1,0 +1,79 @@
+---
+title: 検索期間の定義 (過去1年間)
+description: 終了日を基準に過去365日分の開始日を自動計算するPythonコード
+date: 2025-11-18
+tags:
+  - "#python"
+  - "#datetime"
+  - "#timedelta"
+  - "#日付計算"
+  - "#検索期間"
+parameters:
+  end_date: 2025-11-17
+  start_date: 2024-11-17
+  period_days: 365
+author: Seiichi
+---
+```python
+import datetime
+
+# 終了日を指定
+end_date = '2025-11-17'
+
+# 文字列を datetime 型に変換
+end_dt = datetime.datetime.strptime(end_date, '%Y-%m-%d')
+
+# 任意の期間（日数）を指定
+period_days = 90   # 例: 90日間
+# period_days = 365  # 例: 1年間
+# period_days = 730  # 例: 2年間
+
+# 開始日を計算
+start_dt = end_dt - datetime.timedelta(days=period_days)
+
+# 文字列に変換
+start_date = start_dt.strftime('%Y-%m-%d')
+
+print("検索期間:", start_date, "〜", end_date)
+```
+---
+##実行例
+- period_days = 90 → 「2025-08-19 〜 2025-11-17」
+- period_days = 365 → 「2024-11-17 〜 2025-11-17」
+- period_days = 730 → 「2023-11-17 〜 2025-11-17」
+---
+
+## さらに便利にする工夫
+### 1. 関数化して再利用できるようにする
+
+```python
+def get_period(end_date, days):
+    end_dt = datetime.datetime.strptime(end_date, '%Y-%m-%d')
+    start_dt = end_dt - datetime.timedelta(days=days)
+    return start_dt.strftime('%Y-%m-%d'), end_date
+
+start_date, end_date = get_period('2025-11-17', 365)
+print(start_date, end_date)
+```
+### 2. 年単位で指定したい場合
+- 365日ではなく「年数 × 365日」で計算する簡易版
+- より正確にしたいなら relativedelta（dateutil ライブラリ）を使うと「1年後」「2年前」といった計算が可能
+
+```python
+from dateutil.relativedelta import relativedelta
+
+end_dt = datetime.datetime.strptime('2025-11-17', '%Y-%m-%d')
+start_dt = end_dt - relativedelta(years=2)  # 2年前
+print(start_dt.strftime('%Y-%m-%d'))
+```
+---
+## まとめ
+- timedelta(days=◯◯) で「日数単位」の柔軟な期間指定が可能。
+- relativedelta(years=◯◯) を使えば「年単位」で正確に計算できる。
+- 関数化しておけば、終了日と期間を渡すだけで開始日を自動計算できる。
+
+
+
+
+
+

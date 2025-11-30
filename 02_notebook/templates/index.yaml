@@ -1,0 +1,10 @@
+templates:
+  - title: "日付付きノートブック作成テンプレート"
+    description: "ノートブック作成＋リンク目次更新"
+    file: "templates/notebook_generator.yaml"
+    tags: ["onboarding", "automation"]
+
+  - title: "フォリウム地図テンプレート"
+    description: "マルチレイヤー地図を生成するテンプレート"
+    file: "templates/folium_map.yaml"
+    tags: ["mapping", "gis", "onboarding"]

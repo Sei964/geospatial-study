@@ -1,0 +1,11 @@
+title: "日付付きノートブック作成テンプレート"
+description: "毎日新しいノートブックを作成し、他のノートブックへのリンク付き目次を更新します"
+script: "notebook_generator.py"
+output:
+  - "02_notebook/my_notebook_YYYYMMDD.ipynb"
+  - "02_notebook/index/00_notebook_index.ipynb"
+tags:
+  - onboarding
+  - reproducible
+  - jupyterlab
+  - automation
