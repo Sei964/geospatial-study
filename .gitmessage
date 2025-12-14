@@ -1,0 +1,7 @@
+Add GEE notebook: 京都市のLandsatデータによる地表面温度（LST）算出 (2025-12-01)
+
+- ファイル名: 0011_kyoto_LST_NDVI_20251201.ipynb
+- 概要: LSTとNDVIの相関分析
+- 使用データ: LANDSAT/LC08/C02/T1_L2
+- 手法: LST、NDVIの算出、それぞれの平均値、最低値、最高値を算出、相関係数とP値の算出
+- 備考: 図表はMarkdownに分離、出力セルはnbstripoutで除去

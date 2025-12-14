@@ -1,0 +1,40 @@
+# Jupyter Notebook checkpoints
+**/.ipynb_checkpoints/
+
+# Pythonキャッシュ
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VSCodeや他のエディタの設定
+.vscode/
+.idea/
+
+# OSごとの不要ファイル
+.DS_Store
+Thumbs.db
+
+# 仮想環境
+venv/
+env/
+.venv/
+.env/
+
+# ログや一時ファイル
+*.log
+*.tmp
+*.swp
+
+# 出力ファイルやデータ
+*.out
+*.bak
+*.csv
+*.tsv
+*.zip
+
+# ノートブックの出力セルを含むHTMLなど（必要に応じて）
+*.html
+*.pdf
+
+# その他
+Untitled.ipynb
